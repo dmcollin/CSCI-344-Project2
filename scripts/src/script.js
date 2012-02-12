@@ -10,7 +10,33 @@ GOAL: 	    Using JavaScript, jQuery, Spotter, and Bootstrap create a client-side
 */
 
 function main() {
- alert("hello world!");
+//alert("hello world");
+
+var search = "npr";
+var s = new Spotter("twitter.search",
+	{q:search, period:120}, 
+	{buffer:true, bufferTimeout:750}); 
+
+var tweetArray = [];
+	
+s.register(function(tweet){ 
+
+	var tweetReceived = $("<p>"+tweet.text+"</p>");
+	tweetReceived.hide(); 
+	$("#tweets").empty().prepend(tweetReceived); 
+	tweetReceived.fadeIn();
+	tweetArray.push(tweetReceived); 
+	if (tweetArray.length > 10){
+	   		var tweetRemoved = tweetArray.shift();
+			tweetRemoved.remove();
+	}
+		
+
+});
+
+s.start(); //start the spotter
+
+
 }
 
 main();
