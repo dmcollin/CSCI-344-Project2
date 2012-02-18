@@ -16,9 +16,10 @@ function main() {
 
 
 	var searchTerm;
-	var loveCount = 0;
+	var loveCount;
 	
 	$("#searchButton").click(function(){
+		loveCount = 0;
 		searchTerm = ($("#searchTerm").val());
 		var s = new Spotter("twitter.search",
 		{q:searchTerm, period:120},
@@ -33,26 +34,29 @@ function main() {
 			tweetReceived.fadeIn();
 			tweetArray.push(tweetReceived);
 			if (tweetArray.length > 10){
-  			var tweetRemoved = tweetArray.shift();
-			tweetRemoved.remove();
+  				var tweetRemoved = tweetArray.shift();
+				tweetRemoved.remove();
+			}	//end of tweet array length if statement
 			
-		 //	if(tweet.text.match(/love/) == "love") { 
-		//		alert(tweet.text); 
-		//	}
-		}
-	});
+			if(tweet.text.match(/love/i) == "love") { 
+				loveCount = loveCount + 1;	
+				alert(loveCount);
+			} //end of love match if statement
 
-
-	s.start(); //start the spotter
-
-});
-
-
-}
+		
+		}); //end of s.register function
+		
+		s.start(); //start the spotter	
+	
+	}); //end of search button click function
+	
+	
+} //end of main function
 
 $(document).ready(function(){
 main();
 });
 
 
+//window.location.reload();
 
