@@ -12,51 +12,37 @@ GOAL: 	    Using JavaScript, jQuery, Spotter, and Bootstrap create a client-side
 
 -->
 	
-	<html>
+<html>
+<head>
+	<title>Project 2</title>
 	
-	<head>
-		<meta http-equiv="Content-type" content="text/html; charset=utf-8">
-		<title>Project 2</title>
-		
-		<!--stylesheets-->
-		<link rel="stylesheet" href="http://twitter.github.com/bootstrap/1.4.0/bootstrap.min.css">	
-		<link rel="stylesheet" type="text/css" href="css/style.css">
-		
-		<!--libaries-->
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
-	    <script src="http://twitter.github.com/bootstrap/1.4.0/bootstrap-modal.js"></script>
-	    <script src="scripts/lib/spotter.js"></script>
+	<!--stylesheets-->
+	<link rel="stylesheet" href="http://twitter.github.com/bootstrap/1.4.0/bootstrap.min.css">	
+	<link rel="stylesheet" type="text/css" href="css/style.css">
 	
-		<!--program-->
-		<script src="scripts/src/script.js"></script>
-		
-		
-	</head>
+	<!--libaries-->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+    <script src="http://twitter.github.com/bootstrap/1.4.0/bootstrap-modal.js"></script>
+    <script src="scripts/lib/spotter.js"></script>
+
+	<!--program-->
+	<script src="scripts/src/script.js"></script>
 	
-	<body>
-		
-		<div class="contentContainer">
-			<h1>TWITTER SEARCH</h1>
-			
-				<div class="innerContentContainer">
-					<p>What would you like to search for?</p>
-					<br />
-					
-					<form>
-						<div class="input">
-							<input type="text" /> <!--input text box-->	
-							<button class="btn">GO</button>	
-						</div>
-					</form> 	
-			  	</div>	
-		<p class="disclaimer">This site cannot be held responsible for content from Twitter.  Click GO at your own risk.</p>		
-		
-		<div id="tweets" class="tweets">
-		</div>	
-		
+	
+</head>
+
+  <body>
+	<div class="contentContainer">
+    	<h1>TWITTER SEARCH</h1>
+		<div class="innerContentContainer">
+			<p>What would you like to search for?</p>
+    		<input type="text" placeholder="Enter a search term" id="searchTerm" />
+    		<button class="btn" id="searchButton">Go!</button> <button class="btn" id="stopButton">Reset</button>
 		</div>
-		
-		
-	</body>
+		<p class="disclaimer">This site cannot be held responsible for content from Twitter.  Click GO at your own risk.</p>
 	
+		<div id="tweets" class="tweets">  
+    	</div>
+	</div>
+ </body>
 </html>
