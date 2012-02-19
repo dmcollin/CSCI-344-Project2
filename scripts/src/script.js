@@ -47,16 +47,19 @@ function main() {
 		}); //end of s.register function
 		
 		s.start(); //start the spotter	
+		
+		$("#stopButton").click(function(){
+			s.stop(); //stop the spotter
+			window.location.reload(); //reload the window
+		});
 	
 	}); //end of search button click function
 	
-	
+
 } //end of main function
 
 $(document).ready(function(){
 main();
 });
 
-
-//window.location.reload();
 
