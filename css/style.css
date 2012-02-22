@@ -62,3 +62,16 @@ h1 {
 	font-size: 16px;
 	font-style: italic;
 }
+
+.loveColor {
+	color: red;
+}
+
+.hateColor{
+	color: black;
+}
+
+.plainColor{
+	color: gray;
+}
+
