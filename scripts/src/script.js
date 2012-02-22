@@ -13,6 +13,8 @@ function main() {
 
 	var searchTerm;
 	var loveCount = 0;
+	var color;
+	
 	
 	$("#searchButton").click(function(){
 		searchTerm = ($("#searchTerm").val());
@@ -23,8 +25,21 @@ function main() {
 		var tweetArray = [];
 
 		s.register(function(tweet){
-			var tweetReceived = $("<p class='receivedTweets'>"+tweet.text+"</p>");
-			tweetReceived.hide();
+			if(tweet.text.match(/love/i)) { 	
+				color="loveColor";
+				loveCount = loveCount + 1;	
+				console.log("The word 'love' has appeared " + loveCount + " times.");			
+				} //end of love match if statement
+			else if(tweet.text.match(/hate/i)){
+				color="hateColor";
+			}
+			
+			else{
+				color="plainColor";
+			}
+			
+			var tweetReceived = $("<p class='receivedTweets "+color+"'>"+tweet.text+"</p>");
+			tweetReceived.hide();				
 			$("#tweets").empty().prepend(tweetReceived);
 			tweetReceived.fadeIn();
 			tweetArray.push(tweetReceived);
@@ -33,10 +48,8 @@ function main() {
 				tweetRemoved.remove();
 			}	//end of tweet array length if statement
 			
-			if(tweet.text.match(/love/i) == "love") { 
-				loveCount = loveCount + 1;	
-				console.log("The word 'love' has appeared " + loveCount + " times.");
-			} //end of love match if statement			
+
+
 			
 		}); //end of s.register function
 		
