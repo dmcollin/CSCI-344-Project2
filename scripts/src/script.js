@@ -13,6 +13,11 @@ function main() {
 
 	var searchTerm;
 	var loveCount = 0;
+	var hateCount = 0;
+	var happyCount = 0;
+	var hopeCount = 0;
+	var powerCount = 0;
+	var trustCount = 0;
 	var color;
 	
 	
@@ -25,13 +30,38 @@ function main() {
 		var tweetArray = [];
 
 		s.register(function(tweet){
-			if(tweet.text.match(/love/i)) { 	
+			if(tweet.text.match(/love|passion|heart/i)) { 	
 				color="loveColor";
 				loveCount = loveCount + 1;	
-				console.log("The word 'love' has appeared " + loveCount + " times.");			
+				console.log("The word 'love', 'heart' or 'passion' has appeared " + loveCount + " times.");			
 				} //end of love match if statement
-			else if(tweet.text.match(/hate/i)){
+			else if(tweet.text.match(/hate|death|die/i)){
 				color="hateColor";
+				hateCount = hateCount + 1;	
+				console.log("The word 'hate', 'die' or 'death' has appeared " + hateCount + " times.");
+			}
+			else if(tweet.text.match(/joy|happy|sun|success|encourage/i)){
+				color="happyColor";
+				happyCount = happyCount + 1;
+				console.log("The word 'happy', 'joy', 'sun', 'success', or 'encourage' has appeared " + happyCount + " times.");
+			}
+			
+			else if(tweet.text.match(/nature|grow|garden|harmony|endure|hope/i)){
+				color="hopeColor";
+				hopeCount = hopeCount + 1;
+				console.log("The word 'nature', 'grow', 'garden' 'harmony', 'endure', or 'hope' has appeared " + hopeCount + " times.");
+			}
+			
+			else if(tweet.text.match(/power|wisdom|dignity|creativ|mystery|magic/i)){
+				color="powerColor";
+				powerCount = powerCount + 1;
+				console.log("The word 'power', 'wisdom', 'dignity', 'creativity', 'mystery', or 'magic' has appeared " + powerCount + " times.");
+			}
+			
+			else if(tweet.text.match(/trust|loyal|faith|heaven/i)){
+				color="trustColor";
+				trustCount = trustCount + 1;
+				console.log("The word 'trust', 'loyal', 'faith', or 'heaven' has appeared " + trustCount + " times.");
 			}
 			
 			else{
