@@ -11,7 +11,7 @@ GOAL: 	    Using JavaScript, jQuery, Spotter, and Bootstrap create a client-side
 
 body {
     background:#D8EAEE;
-	font-family:tahoma;
+	font-family: 'Shadows Into Light Two', cursive;
 }
 
 
@@ -41,7 +41,7 @@ h1 {
 
 .innerContentContainer p{
 	padding-top: 50px;
-	font-size: 16px;
+	font-size: 20px;
 }
 
 .innerContentContainer form{
@@ -50,17 +50,17 @@ h1 {
 
 .disclaimer{
 	font-style: italic;
-	font-size: 12px;
+	font-size: 14px;
 	color: white;
 	margin-top: -90px;
 	text-align: center;
 }
-
+	
 .receivedTweets {
+	font-family:arial;
 	padding-top: 30px;
 	text-align: center;
 	font-size: 16px;
-	font-style: italic;
 }
 
 .loveColor {
@@ -88,6 +88,6 @@ h1 {
 }
 
 .plainColor{
-	color: gray;
+	color: #556669;
 }
 
