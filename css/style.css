@@ -71,6 +71,22 @@ h1 {
 	color: black;
 }
 
+.happyColor{
+	color: orange;
+}
+
+.hopeColor{
+	color: green;
+}
+
+.powerColor{
+	color: purple;
+}
+
+.trustColor{
+	color: blue;
+}
+
 .plainColor{
 	color: gray;
 }
